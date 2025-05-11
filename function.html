@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions in JavaScript</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button aria-label="Toggle dark mode" id="theme-toggle">🌓</button>
+      <button aria-label="Back to top" class="back-to-top" id="back-to-top">
+        ↑
+      </button>
+
+      <h1>🛠️ Functions in JavaScript</h1>
+      <div class="highlight">
+        🌟 Objective: Master JavaScript functions from fundamentals to advanced
+        use cases with real-world examples.
+      </div>
+
+      <div class="toc">
+        <h2>📑 Table of Contents</h2>
+        <ul>
+          <li><a href="#what-are-functions">What are Functions?</a></li>
+          <li><a href="#function-declaration">Function Declaration</a></li>
+          <li><a href="#function-expression">Function Expression</a></li>
+          <li><a href="#arrow-functions">Arrow Functions</a></li>
+          <li>
+            <a href="#parameters-and-arguments">Parameters vs Arguments</a>
+          </li>
+          <li><a href="#return-statement">Return Statement</a></li>
+          <li><a href="#default-parameters">Default Parameters</a></li>
+          <li><a href="#rest-parameters">Rest Parameters</a></li>
+          <li><a href="#callback-functions">Callback Functions</a></li>
+          <li><a href="#anonymous-functions">Anonymous Functions</a></li>
+          <li>
+            <a href="#iife">Immediately Invoked Function Expressions (IIFE)</a>
+          </li>
+          <li><a href="#hoisting">Function Hoisting</a></li>
+          <li><a href="#scope">Scope and Closures</a></li>
+          <li><a href="#real-world-examples">Real-world Examples</a></li>
+        </ul>
+      </div>
+
+      <h2 id="what-are-functions">🔧 What are Functions?</h2>
+      <p>
+        Functions are reusable blocks of code that perform a specific task. They
+        help in breaking programs into smaller, manageable chunks and improve
+        code reusability.
+      </p>
+
+      <h2 id="function-declaration">✏️ Function Declaration</h2>
+      <pre><code class="language-javascript">function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+greet("Amina"); // Output: Hello, Amina!</code></pre>
+
+      <h2 id="function-expression">📝 Function Expression</h2>
+      <p>A function can also be stored in a variable.</p>
+      <pre><code class="language-javascript">const greet = function(name) {
+  return `Hi, ${name}`;
+};
+console.log(greet("Ali")); // Hi, Ali</code></pre>
+
+      <h2 id="arrow-functions">➡️ Arrow Functions</h2>
+      <p>
+        Introduced in ES6, arrow functions are a shorter syntax for writing
+        functions.
+      </p>
+      <pre><code class="language-javascript">const square = num => num * num;
+console.log(square(4)); // 16</code></pre>
+
+      <h2 id="parameters-and-arguments">🎯 Parameters vs Arguments</h2>
+      <ul>
+        <li>
+          <strong>Parameters</strong> are placeholders in function definitions.
+        </li>
+        <li>
+          <strong>Arguments</strong> are actual values passed to functions.
+        </li>
+      </ul>
+      <pre><code class="language-javascript">function add(x, y) { // x and y are parameters
+  return x + y;
+}
+add(5, 3); // 5 and 3 are arguments</code></pre>
+
+      <h2 id="return-statement">🔁 Return Statement</h2>
+      <p>
+        The <code>return</code> statement ends function execution and returns a
+        value.
+      </p>
+      <pre><code class="language-javascript">function multiply(a, b) {
+  return a * b;
+}
+let result = multiply(4, 5); // 20</code></pre>
+
+      <h2 id="default-parameters">🔧 Default Parameters</h2>
+      <p>ES6 allows you to assign default values to parameters.</p>
+      <pre><code class="language-javascript">function greet(name = "Guest") {
+  console.log("Welcome, " + name);
+}
+greet(); // Welcome, Guest</code></pre>
+
+      <h2 id="rest-parameters">📦 Rest Parameters</h2>
+      <p>Allows you to handle an indefinite number of arguments as an array.</p>
+      <pre><code class="language-javascript">function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num);
+}
+console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+
+      <h2 id="callback-functions">📞 Callback Functions</h2>
+      <p>A callback is a function passed as an argument to another function.</p>
+      <pre><code class="language-javascript">function processUser(name, callback) {
+  callback(name);
+}
+function sayHello(user) {
+  console.log("Hello " + user);
+}
+processUser("Zahra", sayHello); // Hello Zahra</code></pre>
+
+      <h2 id="anonymous-functions">🙈 Anonymous Functions</h2>
+      <p>Functions without a name. Often used in expressions or callbacks.</p>
+      <pre><code class="language-javascript">setTimeout(function() {
+  console.log("Hello after 1 second");
+}, 1000);</code></pre>
+
+      <h2 id="iife">⚡ Immediately Invoked Function Expression (IIFE)</h2>
+      <p>Runs immediately after being defined.</p>
+      <pre><code class="language-javascript">(function() {
+  console.log("This runs instantly!");
+})();</code></pre>
+
+      <h2 id="hoisting">📤 Function Hoisting</h2>
+      <p>Function declarations are hoisted to the top of their scope.</p>
+      <pre><code class="language-javascript">greet();
+function greet() {
+  console.log("Hi!");
+} // This works!</code></pre>
+
+      <h2 id="scope">🌐 Scope and Closures</h2>
+      <h3>Block vs Function Scope</h3>
+      <pre><code class="language-javascript">function outer() {
+  let outerVar = "I'm outside!";
+
+  function inner() {
+    console.log(outerVar); // Accesses outer scope
+  }
+
+  return inner;
+}
+
+const closureFunc = outer();
+closureFunc(); // I'm outside!</code></pre>
+      <p>
+        This is a closure — inner function remembers variables from its parent
+        scope.
+      </p>
+
+      <h2 id="real-world-examples">🌍 Real-world Examples</h2>
+      <h3>Form Validation</h3>
+      <pre><code class="language-javascript">function validateEmail(email) {
+  return email.includes("@");
+}</code></pre>
+
+      <h3>Discount Calculation</h3>
+      <pre><code class="language-javascript">function calculateDiscount(price, percent) {
+  return price - (price * percent / 100);
+}</code></pre>
+
+      <h3>Array Filtering</h3>
+      <pre><code class="language-javascript">const numbers = [1, 2, 3, 4, 5, 6];
+const even = numbers.filter(num => num % 2 === 0);
+console.log(even); // [2, 4, 6]</code></pre>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="dist/js/main.js"></script>
+  </body>
+</html>

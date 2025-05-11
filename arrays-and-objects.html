@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Arrays and Objects</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button aria-label="Toggle dark mode" id="theme-toggle">🌓</button>
+      <button aria-label="Back to top" class="back-to-top" id="back-to-top">
+        ↑
+      </button>
+
+      <h1>📦 JavaScript Arrays and Objects</h1>
+      <div class="highlight">
+        🌟 Objective: Learn to create, manipulate, and use Arrays and Objects in
+        JavaScript from beginner to advanced level.
+      </div>
+
+      <div class="toc">
+        <h2>📑 Table of Contents</h2>
+        <ul>
+          <li><a href="#arrays">Arrays</a></li>
+          <li><a href="#objects">Objects</a></li>
+        </ul>
+      </div>
+
+      <!-- ARRAYS -->
+      <h2 id="arrays">📦 Arrays</h2>
+      <p>
+        An array is a list-like object used to store multiple values in a single
+        variable. Arrays are ordered and indexed starting from 0.
+      </p>
+
+      <h3>✅ Creating Arrays</h3>
+      <pre><code class="language-javascript">const colors = ["red", "green", "blue"];
+const numbers = new Array(1, 2, 3);</code></pre>
+
+      <h3>🎯 Accessing & Updating Elements</h3>
+      <pre><code class="language-javascript">console.log(colors[0]); // red
+colors[1] = "yellow";   // update second element</code></pre>
+
+      <h3>📏 Array Length</h3>
+      <pre><code class="language-javascript">console.log(colors.length); // 3</code></pre>
+
+      <h3>🔁 Looping Through Arrays</h3>
+      <pre><code class="language-javascript">for (let i = 0; i < colors.length; i++) {
+  console.log(colors[i]);
+}</code></pre>
+      <pre><code class="language-javascript">for (let color of colors) {
+  console.log(color);
+}</code></pre>
+
+      <h3>🧰 Common Array Methods</h3>
+      <pre><code class="language-javascript">colors.push("purple");   // add to end
+colors.pop();             // remove from end
+colors.shift();           // remove from start
+colors.unshift("black"); // add to start</code></pre>
+
+      <h3>📐 Advanced Methods</h3>
+      <pre><code class="language-javascript">const nums = [1, 2, 3, 4];
+const doubled = nums.map(n => n * 2); // [2, 4, 6, 8]
+const even = nums.filter(n => n % 2 === 0); // [2, 4]
+const total = nums.reduce((sum, n) => sum + n, 0); // 10</code></pre>
+
+      <h3>🧩 Nested Arrays</h3>
+      <pre><code class="language-javascript">const matrix = [
+  [1, 2],
+  [3, 4],
+  [5, 6]
+];
+console.log(matrix[1][0]); // 3</code></pre>
+
+      <h3>📘 Questions and Answers</h3>
+      <ul>
+        <li>
+          <strong>Q:</strong> What is the index of the first element?
+          <strong>A:</strong> 0
+        </li>
+        <li>
+          <strong>Q:</strong> How do you remove the last item in an array?
+          <strong>A:</strong> <code>pop()</code>
+        </li>
+        <li>
+          <strong>Q:</strong> Which method returns a new array?
+          <strong>A:</strong> <code>map()</code>, <code>filter()</code>
+        </li>
+      </ul>
+
+      <!-- OBJECTS -->
+      <h2 id="objects">🔐 Objects</h2>
+      <p>
+        Objects are used to store data as key-value pairs. They are ideal for
+        representing structured data like a person or product.
+      </p>
+
+      <h3>✅ Creating Objects</h3>
+      <pre><code class="language-javascript">const person = {
+  name: "Ali",
+  age: 30,
+  city: "Colombo"
+};</code></pre>
+
+      <h3>🎯 Accessing & Updating Properties</h3>
+      <pre><code class="language-javascript">console.log(person.name);       // Ali
+person.age = 31;
+person.country = "Sri Lanka";</code></pre>
+
+      <h3>🧹 Deleting Properties</h3>
+      <pre><code class="language-javascript">delete person.city;</code></pre>
+
+      <h3>🔁 Looping Through Object</h3>
+      <pre><code class="language-javascript">for (let key in person) {
+  console.log(key + ": " + person[key]);
+}</code></pre>
+
+      <h3>📦 Array Inside Object</h3>
+      <pre><code class="language-javascript">const student = {
+  name: "Sara",
+  grades: [85, 92, 78]
+};
+console.log(student.grades[1]); // 92</code></pre>
+
+      <h3>🧠 Object Inside Array</h3>
+      <pre><code class="language-javascript">const products = [
+  { name: "Pen", price: 10 },
+  { name: "Book", price: 50 }
+];
+console.log(products[0].name); // Pen</code></pre>
+
+      <h3>📘 Questions and Answers</h3>
+      <ul>
+        <li>
+          <strong>Q:</strong> How do you access object properties?
+          <strong>A:</strong> Using dot notation or bracket notation
+        </li>
+        <li>
+          <strong>Q:</strong> Can you store arrays inside objects?
+          <strong>A:</strong> Yes
+        </li>
+        <li>
+          <strong>Q:</strong> Can you store objects inside arrays?
+          <strong>A:</strong> Yes
+        </li>
+      </ul>
+
+      <div class="highlight">
+        <strong>Summary:</strong> Arrays store ordered collections. Objects
+        store named properties. Combining both gives flexibility and power in
+        JavaScript programming.
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="dist/js/main.js"></script>
+  </body>
+</html>
