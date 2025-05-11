@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Class 2 Notes - Conditions and Loops in JavaScript</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button aria-label="Toggle dark mode" id="theme-toggle">🌓</button>
+      <button aria-label="Back to top" class="back-to-top" id="back-to-top">
+        ↑
+      </button>
+
+      <h1>💡 JavaScript Conditional Statements Practice Exercises</h1>
+      <div class="toc">
+        <h2>📑 Table of Contents</h2>
+        <ul>
+          <li>
+            <a href="#exercise-1"
+              >Exercise 1: Check if a Number is Positive — ⭐☆☆ (Easy)</a
+            >
+          </li>
+          <li>
+            <a href="#exercise-2"
+              >Exercise 2: Even or Odd Number Checker — ⭐☆☆ (Easy)</a
+            >
+          </li>
+          <li>
+            <a href="#exercise-3"
+              >Exercise 3: Determine if a Person is Eligible to Vote — ⭐☆☆
+              (Easy)</a
+            >
+          </li>
+          <li>
+            <a href="#exercise-4"
+              >Exercise 4: Grade Calculator — ⭐⭐☆ (Medium)</a
+            >
+          </li>
+          <li>
+            <a href="#exercise-5"
+              >Exercise 5: Day of Week Message Generator — ⭐⭐☆ (Medium)</a
+            >
+          </li>
+          <li>
+            <a href="#exercise-6"
+              >Exercise 6: Shopping Cart Discount Calculator — ⭐⭐☆ (Medium)</a
+            >
+          </li>
+          <li>
+            <a href="#exercise-7"
+              >Exercise 7: Shipping Cost Calculator — ⭐⭐⭐ (Hard)</a
+            >
+          </li>
+        </ul>
+      </div>
+      <h2 id="exercise-1">
+        Exercise 1: Check if a Number is Positive — ⭐☆☆ (Easy)
+      </h2>
+      <div class="highlight">
+        Write a function that checks whether a number is positive, negative, or
+        zero.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">function checkNumber(num) {
+          if (num &gt; 0) {
+            return "Positive";
+          } else if (num &lt; 0) {
+            return "Negative";
+          } else {
+            return "Zero";
+          }
+        }</code></pre>
+      </div>
+      <h2 id="exercise-2">
+        Exercise 2: Even or Odd Number Checker — ⭐☆☆ (Easy)
+      </h2>
+      <div class="highlight">
+        Write a function that determines if a given number is even or odd.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">function isEvenOrOdd(num) {
+          if (num % 2 === 0) {
+            return "Even";
+          } else {
+            return "Odd";
+          }
+        }</code></pre>
+      </div>
+      <h2 id="exercise-3">
+        Exercise 3: Determine if a Person is Eligible to Vote — ⭐☆☆ (Easy)
+      </h2>
+      <div class="highlight">
+        Write a function that checks if a person is eligible to vote based on
+        age. A person is eligible if their age is 18 or above.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">function canVote(age) {
+          if (age &gt;= 18) {
+            return "Eligible to vote";
+          } else {
+            return "Not eligible to vote";
+          }
+        }</code></pre>
+      </div>
+      <h2 id="exercise-4">Exercise 4: Grade Calculator — ⭐⭐☆ (Medium)</h2>
+      <div class="highlight">
+        Create a function that calculates a letter grade based on a numerical
+        score:
+
+        <ul>
+          <li>90-100: 'A'</li>
+          <li>80-89: 'B'</li>
+          <li>70-79: 'C'</li>
+          <li>60-69: 'D'</li>
+          <li>Below 60: 'F'</li>
+        </ul>
+
+        Implement this using both <strong>if/else if</strong> and
+        <strong>switch</strong> statements.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">// If/else if version
+        function calculateGradeIfElse(score) {
+          if (score &gt;= 90 &amp;&amp; score &lt;= 100) return 'A';
+          else if (score &gt;= 80) return 'B';
+          else if (score &gt;= 70) return 'C';
+          else if (score &gt;= 60) return 'D';
+          else if (score &gt;= 0) return 'F';
+          else return 'Invalid score';
+        }
+        
+        // Switch version
+        function calculateGradeSwitch(score) {
+          const gradeRange = Math.floor(score / 10);
+          switch (gradeRange) {
+            case 10:
+            case 9: return 'A';
+            case 8: return 'B';
+            case 7: return 'C';
+            case 6: return 'D';
+            case 5:
+            case 4:
+            case 3:
+            case 2:
+            case 1:
+            case 0: return 'F';
+            default: return 'Invalid score';
+          }
+        }</code></pre>
+      </div>
+      <h2 id="exercise-5">
+        Exercise 5: Day of Week Message Generator — ⭐⭐☆ (Medium)
+      </h2>
+      <div class="highlight">
+        Create a function that takes a day number (1-7) and returns a custom
+        message for each day of the week:
+
+        <ul>
+          <li>1: Monday – "Start of the work week"</li>
+          <li>2: Tuesday – "Taco Tuesday!"</li>
+          <li>3: Wednesday – "Halfway there!"</li>
+          <li>4: Thursday – "Almost the weekend"</li>
+          <li>5: Friday – "TGIF!"</li>
+          <li>6: Saturday – "Weekend fun day"</li>
+          <li>7: Sunday – "Rest day"</li>
+        </ul>
+
+        Implement this using both <strong>if/else if</strong> and
+        <strong>switch</strong> statements.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">// If/else if version
+        function getDayMessageIfElse(dayNumber) {
+          if (dayNumber === 1) return "Start of the work week";
+          else if (dayNumber === 2) return "Taco Tuesday!";
+          else if (dayNumber === 3) return "Halfway there!";
+          else if (dayNumber === 4) return "Almost the weekend";
+          else if (dayNumber === 5) return "TGIF!";
+          else if (dayNumber === 6) return "Weekend fun day";
+          else if (dayNumber === 7) return "Rest day";
+          else return "Invalid day number";
+        }
+        
+        // Switch version
+        function getDayMessageSwitch(dayNumber) {
+          switch (dayNumber) {
+            case 1: return "Start of the work week";
+            case 2: return "Taco Tuesday!";
+            case 3: return "Halfway there!";
+            case 4: return "Almost the weekend";
+            case 5: return "TGIF!";
+            case 6: return "Weekend fun day";
+            case 7: return "Rest day";
+            default: return "Invalid day number";
+          }
+        }</code></pre>
+      </div>
+      <h2 id="exercise-6">
+        Exercise 6: Shopping Cart Discount Calculator — ⭐⭐☆ (Medium)
+      </h2>
+      <div class="highlight">
+        Create a function called <code>calculateDiscount</code> that determines
+        the discount a customer receives based on their total purchase amount:
+
+        <ul>
+          <li>Purchases under $50: No discount</li>
+          <li>Purchases between $50 and $100: 5% discount</li>
+          <li>Purchases between $100 and $200: 10% discount</li>
+          <li>Purchases over $200: 15% discount</li>
+        </ul>
+
+        Then, write both <strong>if/else if</strong> and
+        <strong>switch</strong> versions of this function.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">// If/else if version
+        function calculateDiscountIfElse(totalAmount) {
+          if (totalAmount &lt; 50) return 0;
+          else if (totalAmount &lt; 100) return totalAmount * 0.05;
+          else if (totalAmount &lt; 200) return totalAmount * 0.10;
+          else return totalAmount * 0.15;
+        }
+        
+        // Switch version
+        function calculateDiscountSwitch(totalAmount) {
+          const range = Math.floor(totalAmount / 50);
+          switch (range) {
+            case 0: return 0;
+            case 1: return totalAmount * 0.05;
+            case 2:
+            case 3: return totalAmount * 0.10;
+            default: return totalAmount * 0.15;
+          }
+        }</code></pre>
+      </div>
+      <h2 id="exercise-7">
+        Exercise 7: Shipping Cost Calculator — ⭐⭐⭐ (Hard)
+      </h2>
+      <div class="highlight">
+        Create a function that calculates shipping cost based on:
+
+        <ul>
+          <li><strong>Package weight</strong> (in pounds)</li>
+          <li><strong>Shipping distance</strong> (in miles)</li>
+          <li>
+            <strong>Shipping speed</strong> (standard, express, or overnight)
+          </li>
+        </ul>
+
+        Rules:
+
+        <ul>
+          <li>Weight under 1lb: $1.50 per pound</li>
+          <li>Weight 1-5lb: $3.00 per pound</li>
+          <li>Weight over 5lb: $4.50 per pound</li>
+          <li>Distance under 100 miles: No additional charge</li>
+          <li>Distance 100-500 miles: $5 additional</li>
+          <li>Distance over 500 miles: $10 additional</li>
+          <li>Standard shipping: No additional charge</li>
+          <li>Express shipping: $12 additional</li>
+          <li>Overnight shipping: $25 additional</li>
+        </ul>
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">function calculateShippingCost(weight, distance, speed) {
+          let cost = 0;
+          if (weight &lt; 1) cost += weight * 1.50;
+          else if (weight &lt;= 5) cost += weight * 3.00;
+          else cost += weight * 4.50;
+        
+          if (distance &gt;= 100 &amp;&amp; distance &lt;= 500) cost += 5;
+          else if (distance &gt; 500) cost += 10;
+        
+          switch (speed.toLowerCase()) {
+            case "standard": break;
+            case "express": cost += 12; break;
+            case "overnight": cost += 25; break;
+            default: return "Invalid shipping speed";
+          }
+        
+          return cost.toFixed(2);
+        }</code></pre>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

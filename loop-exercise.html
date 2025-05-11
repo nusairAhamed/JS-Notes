@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Class 2 Notes - Conditions and Loops in JavaScript</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button aria-label="Toggle dark mode" id="theme-toggle">🌓</button>
+      <button aria-label="Back to top" class="back-to-top" id="back-to-top">
+        ↑
+      </button>
+
+      <h1>🔁 JavaScript Loop Practice Exercises</h1>
+      <div class="toc">
+        <h2>📑 Table of Contents</h2>
+        <ul>
+          <li>
+            <a href="#loop-ex-1"
+              >Exercise 1: Print Numbers from 1 to 10 — ⭐☆☆ (Easy)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-2"
+              >Exercise 2: Print Even Numbers from 1 to 20 — ⭐☆☆ (Easy)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-3"
+              >Exercise 3: Calculate Sum from 1 to 100 using while — ⭐⭐☆
+              (Medium)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-4"
+              >Exercise 4: Multiplication Table using do...while — ⭐⭐☆
+              (Medium)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-5"
+              >Exercise 5: Loop through Object using for...in — ⭐⭐☆
+              (Medium)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-6"
+              >Exercise 6: Loop through Array using for...of — ⭐⭐☆ (Medium)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-7"
+              >Exercise 7: Skip Odd Numbers using continue — ⭐⭐☆ (Medium)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-8"
+              >Exercise 8: Stop Loop at First Negative using break — ⭐⭐⭐
+              (Hard)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-9"
+              >Exercise 9: Nested Loop Pattern Printing — ⭐⭐⭐ (Hard)</a
+            >
+          </li>
+          <li>
+            <a href="#loop-ex-10">Exercise 10: FizzBuzz — ⭐⭐⭐ (Hard)</a>
+          </li>
+        </ul>
+      </div>
+      <h2 id="loop-ex-1">
+        Exercise 1: Print Numbers from 1 to 10 — ⭐☆☆ (Easy)
+      </h2>
+      <div class="highlight">
+        Use a <code>for</code> loop to print numbers from 1 to 10.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">for (let i = 1; i &lt;= 10; i++) {
+          console.log(i);
+        }</code></pre>
+      </div>
+      <h2 id="loop-ex-2">
+        Exercise 2: Print Even Numbers from 1 to 20 — ⭐☆☆ (Easy)
+      </h2>
+      <div class="highlight">
+        Use a <code>for</code> loop to print even numbers from 1 to 20.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">for (let i = 2; i &lt;= 20; i += 2) {
+          console.log(i);
+        }</code></pre>
+      </div>
+      <h2 id="loop-ex-3">
+        Exercise 3: Calculate Sum from 1 to 100 using while — ⭐⭐☆ (Medium)
+      </h2>
+      <div class="highlight">
+        Use a <code>while</code> loop to calculate the sum of numbers from 1 to
+        100.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">let sum = 0, i = 1;
+        while (i &lt;= 100) {
+          sum += i;
+          i++;
+        }
+        console.log(sum);</code></pre>
+      </div>
+      <h2 id="loop-ex-4">
+        Exercise 4: Multiplication Table using do...while — ⭐⭐☆ (Medium)
+      </h2>
+      <div class="highlight">
+        Use a <code>do...while</code> loop to print the multiplication table of
+        5.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">let i = 1;
+        const n = 5;
+        do {
+          console.log(`${n} x ${i} = ${n * i}`);
+          i++;
+        } while (i &lt;= 10);</code></pre>
+      </div>
+      <h2 id="loop-ex-5">
+        Exercise 5: Loop through Object using for...in — ⭐⭐☆ (Medium)
+      </h2>
+      <div class="highlight">
+        Use a <code>for...in</code> loop to print keys and values of an object.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">const person = { name: "Ali", age: 25, city: "Colombo" };
+        for (let key in person) {
+          console.log(key + ": " + person[key]);
+        }</code></pre>
+      </div>
+      <h2 id="loop-ex-6">
+        Exercise 6: Loop through Array using for...of — ⭐⭐☆ (Medium)
+      </h2>
+      <div class="highlight">
+        Use a <code>for...of</code> loop to print all elements of an array.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">const fruits = ["apple", "banana", "mango"];
+        for (let fruit of fruits) {
+          console.log(fruit);
+        }</code></pre>
+      </div>
+      <h2 id="loop-ex-7">
+        Exercise 7: Skip Odd Numbers using continue — ⭐⭐☆ (Medium)
+      </h2>
+      <div class="highlight">
+        Use a <code>for</code> loop and <code>continue</code> to skip odd
+        numbers.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">for (let i = 1; i &lt;= 10; i++) {
+          if (i % 2 !== 0) continue;
+          console.log(i);
+        }</code></pre>
+      </div>
+      <h2 id="loop-ex-8">
+        Exercise 8: Stop Loop at First Negative using break — ⭐⭐⭐ (Hard)
+      </h2>
+      <div class="highlight">
+        Loop through an array and stop at the first negative number using
+        <code>break</code>.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">const nums = [10, 15, -5, 20];
+        for (let num of nums) {
+          if (num &lt; 0) break;
+          console.log(num);
+        }</code></pre>
+      </div>
+      <h2 id="loop-ex-9">
+        Exercise 9: Nested Loop Pattern Printing — ⭐⭐⭐ (Hard)
+      </h2>
+      <div class="highlight">
+        Use nested <code>for</code> loops to print the following pattern:<br /><code
+          >*<br />**<br />***<br />****<br />*****</code
+        >
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">for (let i = 1; i &lt;= 5; i++) {
+          let row = "";
+          for (let j = 1; j &lt;= i; j++) {
+            row += "*";
+          }
+          console.log(row);
+        }</code></pre>
+      </div>
+      <h2 id="loop-ex-10">Exercise 10: FizzBuzz — ⭐⭐⭐ (Hard)</h2>
+      <div class="highlight">
+        Print numbers from 1 to 50. For multiples of 3, print <code>Fizz</code>;
+        for multiples of 5, print <code>Buzz</code>; for both, print
+        <code>FizzBuzz</code>.
+      </div>
+      <div class="highlight">
+        <pre><code class="language-javascript">for (let i = 1; i &lt;= 50; i++) {
+          if (i % 3 === 0 &amp;&amp; i % 5 === 0) console.log("FizzBuzz");
+          else if (i % 3 === 0) console.log("Fizz");
+          else if (i % 5 === 0) console.log("Buzz");
+          else console.log(i);
+        }</code></pre>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

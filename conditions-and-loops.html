@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Class 2 Notes - Conditions and Loops in JavaScript</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button aria-label="Toggle dark mode" id="theme-toggle">🌓</button>
+      <button aria-label="Back to top" class="back-to-top" id="back-to-top">
+        ↑
+      </button>
+      <h1>🎓 Conditions and Loops in JavaScript</h1>
+      <div class="highlight">
+        🌟 Objective: Master Conditional Statements and Loops for Program Flow
+        Control in JavaScript!
+      </div>
+      <div class="toc">
+        <h2 id="table-of-contents">📑 Table of Contents</h2>
+        <ul>
+          <li>
+            <a href="#conditional-statements">Conditional Statements</a>
+            <ul class="toc-sub">
+              <li><a href="#if-statement">if Statement</a></li>
+              <li><a href="#if-else-statement">if...else Statement</a></li>
+              <li>
+                <a href="#if-else-if-statement"
+                  >if...else if...else Statement</a
+                >
+              </li>
+              <li><a href="#ternary-operator">Ternary Operator</a></li>
+              <li><a href="#switch-statement">switch Statement</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#logical-operators">Logical Operators</a>
+            <ul class="toc-sub">
+              <li><a href="#and-operator">AND Operator (&&)</a></li>
+              <li><a href="#or-operator">OR Operator (||)</a></li>
+              <li><a href="#not-operator">NOT Operator (!)</a></li>
+              <li><a href="#nullish-coalescing">Nullish Coalescing (??)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#loop-structures">Loop Structures</a>
+            <ul class="toc-sub">
+              <li><a href="#for-loop">for Loop</a></li>
+              <li><a href="#while-loop">while Loop</a></li>
+              <li><a href="#do-while-loop">do...while Loop</a></li>
+              <li><a href="#for-in-loop">for...in Loop</a></li>
+              <li><a href="#for-of-loop">for...of Loop</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#loop-control">Loop Control Statements</a>
+            <ul class="toc-sub">
+              <li><a href="#break-statement">break Statement</a></li>
+              <li><a href="#continue-statement">continue Statement</a></li>
+            </ul>
+          </li>
+          <li><a href="#nested-structures">Nested Conditions and Loops</a></li>
+          <li><a href="#common-patterns">Common Patterns and Use Cases</a></li>
+          <li><a href="#practice-exercises">Practice Exercises</a></li>
+        </ul>
+      </div>
+      <h2 id="conditional-statements">🔀 Conditional Statements</h2>
+      <p>
+        Conditional statements allow you to execute different code blocks based
+        on different conditions.
+      </p>
+      <h3 id="if-statement">🚦 if Statement</h3>
+      <p>
+        The <code>if</code> statement executes a block of code if the specified
+        condition is true.
+      </p>
+      <pre><code class="language-javascript">if (condition) {
+ // Code to execute if condition is true
+}</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">let age = 18;
+if (age >= 18) {
+ console.log("You are eligible to vote!");
+}
+// Output: "You are eligible to vote!"</code></pre>
+      </div>
+      <h3 id="if-else-statement">🔄 if...else Statement</h3>
+      <p>
+        The <code>if...else</code> statement executes a block of code if the
+        condition is true and another block if it's false.
+      </p>
+      <pre><code class="language-javascript">if (condition) {
+ // Code to execute if condition is true
+} else {
+ // Code to execute if condition is false
+}</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">let hour = 20;
+if (hour < 18) {
+ console.log("Good day!");
+} else {
+ console.log("Good evening!");
+}
+// Output: "Good evening!"</code></pre>
+      </div>
+      <h3 id="if-else-if-statement">🌈 if...else if...else Statement</h3>
+      <p>
+        The <code>if...else if...else</code> statement checks multiple
+        conditions in sequence.
+      </p>
+      <pre><code class="language-javascript">if (condition1) {
+ // Code to execute if condition1 is true
+} else if (condition2) {
+ // Code to execute if condition2 is true
+} else {
+ // Code to execute if all conditions are false
+}</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">let score = 85;
+
+if (score >= 90) {
+ console.log("Grade: A");
+} else if (score >= 80) {
+ console.log("Grade: B");
+} else if (score >= 70) {
+ console.log("Grade: C");
+} else if (score >= 60) {
+ console.log("Grade: D");
+} else {
+ console.log("Grade: F");
+}
+// Output: "Grade: B"</code></pre>
+      </div>
+      <div class="highlight">
+        <strong>💡 Real-world Example:</strong><br />
+        Determining shipping costs based on the order value. Different price
+        ranges get different shipping rates.
+      </div>
+      <h3 id="ternary-operator">🔮 Ternary Operator</h3>
+      <p>
+        The ternary operator is a shorthand way to write an
+        <code>if...else</code> statement in a single line.
+      </p>
+      <pre><code class="language-javascript">condition ? expressionIfTrue : expressionIfFalse;</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">let age = 20;
+let canVote = age >= 18 ? "Yes" : "No";
+console.log("Can vote:", canVote); // Output: "Can vote: Yes"
+
+// Equivalent if...else statement:
+let canVoteAlt;
+if (age >= 18) {
+ canVoteAlt = "Yes";
+} else {
+ canVoteAlt = "No";
+}</code></pre>
+      </div>
+      <div class="warning">
+        <p>
+          <strong>Note:</strong> Ternary operators can be nested, but this can
+          quickly make code hard to read. Avoid deep nesting!
+        </p>
+        <pre><code class="language-javascript">// Example of hard-to-read nested ternary:
+let result = age < 18 ? "Minor" : age < 65 ? "Adult" : "Senior";</code></pre>
+      </div>
+      <h3 id="switch-statement">🔄 switch Statement</h3>
+      <p>
+        The <code>switch</code> statement evaluates an expression and matches it
+        with case clauses.
+      </p>
+      <pre><code class="language-javascript">switch (expression) {
+ case value1:
+   // Code to execute if expression === value1
+   break;
+ case value2:
+   // Code to execute if expression === value2
+   break;
+ default:
+   // Code to execute if no case matches
+}</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">let day = 3;
+let dayName;
+
+switch (day) {
+ case 1:
+   dayName = "Monday";
+   break;
+ case 2:
+   dayName = "Tuesday";
+   break;
+ case 3:
+   dayName = "Wednesday";
+   break;
+ case 4:
+   dayName = "Thursday";
+   break;
+ case 5:
+   dayName = "Friday";
+   break;
+ case 6:
+   dayName = "Saturday";
+   break;
+ case 7:
+   dayName = "Sunday";
+   break;
+ default:
+   dayName = "Invalid day";
+}
+
+console.log("Today is " + dayName); // Output: "Today is Wednesday"</code></pre>
+      </div>
+      <div class="warning">
+        <p>
+          <strong>Important:</strong> Don't forget the
+          <code>break</code> statement after each case! Without it, execution
+          will "fall through" to subsequent cases.
+        </p>
+        <pre><code class="language-javascript">// Intentional fall-through example:
+switch (fruit) {
+ case "apple":
+ case "pear":
+   console.log("This is a pome fruit.");
+   break;
+ case "orange":
+ case "lemon":
+   console.log("This is a citrus fruit.");
+   break;
+}</code></pre>
+      </div>
+      <h2 id="logical-operators">🧠 Logical Operators</h2>
+      <h3 id="and-operator">🔗 AND Operator (&&)</h3>
+      <p>Returns <code>true</code> if both operands are true.</p>
+      <pre><code class="language-javascript">let hasLicense = true;
+let hasInsurance = true;
+let canDrive = hasLicense && hasInsurance; // true
+
+// Short-circuit evaluation - the second expression won't be evaluated if the first is false
+let result = false && someFunction(); // someFunction() is never called</code></pre>
+      <h3 id="or-operator">🔀 OR Operator (||)</h3>
+      <p>Returns <code>true</code> if at least one operand is true.</p>
+      <pre><code class="language-javascript">let hasCash = false;
+let hasCard = true;
+let canPay = hasCash || hasCard; // true
+
+// Short-circuit evaluation - the second expression won't be evaluated if the first is true
+let name = userInput || "Guest"; // Default value if userInput is falsy</code></pre>
+      <h3 id="not-operator">❗ NOT Operator (!)</h3>
+      <p>Returns the opposite of the operand's boolean value.</p>
+      <pre><code class="language-javascript">let isLoggedIn = false;
+console.log(!isLoggedIn); // true
+
+// Double NOT (!!) is often used to convert a value to boolean
+console.log(!!0);       // false
+console.log(!!"hello"); // true</code></pre>
+      <h3 id="nullish-coalescing">🔍 Nullish Coalescing (??)</h3>
+      <p>
+        Returns the right operand when the left is <code>null</code> or
+        <code>undefined</code>.
+      </p>
+      <pre><code class="language-javascript">let username = null;
+let displayName = username ?? "Guest";
+console.log(displayName); // "Guest"
+
+// Different from ||, which returns the right side for any falsy value
+let count = 0;
+let displayCount = count || "Unknown"; // "Unknown" because 0 is falsy
+let actualCount = count ?? "Unknown";  // 0 because it's not null or undefined</code></pre>
+      <h2 id="loop-structures">🔄 Loop Structures</h2>
+      <p>
+        Loops allow you to execute code repeatedly until a certain condition is
+        met.
+      </p>
+      <h3 id="for-loop">📋 for Loop</h3>
+      <p>
+        The <code>for</code> loop repeats a block of code a specified number of
+        times.
+      </p>
+      <pre><code class="language-javascript">for (initialization; condition; increment/decrement) {
+ // Code to execute in each iteration
+}</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">// Counting from 1 to 5
+for (let i = 1; i <= 5; i++) {
+ console.log(i);
+}
+// Output: 1 2 3 4 5
+
+// Iterating through an array
+const fruits = ["Apple", "Banana", "Cherry"];
+for (let i = 0; i < fruits.length; i++) {
+ console.log(fruits[i]);
+}
+// Output: Apple Banana Cherry</code></pre>
+      </div>
+      <h3 id="while-loop">🔄 while Loop</h3>
+      <p>
+        The <code>while</code> loop executes a block of code as long as the
+        specified condition is true.
+      </p>
+      <pre><code class="language-javascript">while (condition) {
+ // Code to execute as long as condition is true
+}</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">let i = 1;
+while (i <= 5) {
+ console.log(i);
+ i++;
+}
+// Output: 1 2 3 4 5
+
+// Generating a random number until we get one greater than 0.8
+let random;
+while ((random = Math.random()) <= 0.8) {
+ console.log("Got:", random);
+}</code></pre>
+      </div>
+      <div class="warning">
+        <p>
+          <strong>Warning:</strong> Be careful with <code>while</code> loops!
+          Always ensure the condition will eventually become false, or you'll
+          create an infinite loop.
+        </p>
+      </div>
+      <h3 id="do-while-loop">🔁 do...while Loop</h3>
+      <p>
+        The <code>do...while</code> loop is similar to the
+        <code>while</code> loop, but it always executes the code block at least
+        once before checking the condition.
+      </p>
+      <pre><code class="language-javascript">do {
+ // Code to execute at least once
+} while (condition);</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">let i = 1;
+do {
+ console.log(i);
+ i++;
+} while (i <= 5);
+// Output: 1 2 3 4 5
+
+// The loop runs once even if the condition is false initially
+let j = 10;
+do {
+ console.log("This runs once:", j);
+ j++;
+} while (j <= 5);
+// Output: "This runs once: 10"</code></pre>
+      </div>
+      <h3 id="for-in-loop">🔍 for...in Loop</h3>
+      <p>
+        The <code>for...in</code> loop iterates over all enumerable properties
+        of an object.
+      </p>
+      <pre><code class="language-javascript">for (variable in object) {
+ // Code to execute for each property
+}</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">const person = {
+ name: "John",
+ age: 30,
+ city: "New York"
+};
+
+for (let key in person) {
+ console.log(key + ": " + person[key]);
+}
+// Output:
+// name: John
+// age: 30
+// city: New York</code></pre>
+      </div>
+      <div class="warning">
+        <p>
+          <strong>Note:</strong> <code>for...in</code> is meant for objects, not
+          arrays. When used with arrays, it iterates over indices as strings,
+          not values!
+        </p>
+        <pre><code class="language-javascript">const numbers = [10, 20, 30];
+for (let index in numbers) {
+ console.log(index, typeof index); // "0" string, "1" string, "2" string
+ console.log(numbers[index]); // 10, 20, 30
+}</code></pre>
+      </div>
+      <h3 id="for-of-loop">📦 for...of Loop</h3>
+      <p>
+        The <code>for...of</code> loop iterates over iterable objects like
+        arrays, strings, Maps, etc.
+      </p>
+      <pre><code class="language-javascript">for (variable of iterable) {
+ // Code to execute for each element
+}</code></pre>
+      <div class="highlight">
+        <strong>Example:</strong>
+        <pre><code class="language-javascript">const colors = ["red", "green", "blue"];
+for (let color of colors) {
+ console.log(color);
+}
+// Output: red green blue
+
+const message = "Hello";
+for (let char of message) {
+ console.log(char);
+}
+// Output: H e l l o</code></pre>
+      </div>
+      <div class="highlight">
+        <strong>💡 Real-world Example:</strong><br />
+        Processing items in a shopping cart array using a
+        <code>for...of</code> loop to calculate the total price.
+      </div>
+      <h2 id="loop-control">🛑 Loop Control Statements</h2>
+      <h3 id="break-statement">🚪 break Statement</h3>
+      <p>
+        The <code>break</code> statement terminates the current loop or switch
+        statement.
+      </p>
+      <pre><code class="language-javascript">for (let i = 1; i <= 10; i++) {
+ if (i === 5) {
+   break; // Exit the loop when i is 5
+ }
+ console.log(i);
+}
+// Output: 1 2 3 4</code></pre>
+      <h3 id="continue-statement">⏭️ continue Statement</h3>
+      <p>
+        The <code>continue</code> statement skips the current iteration and
+        moves to the next one.
+      </p>
+      <pre><code class="language-javascript">for (let i = 1; i <= 5; i++) {
+ if (i === 3) {
+   continue; // Skip iteration when i is 3
+ }
+ console.log(i);
+}
+// Output: 1 2 4 5</code></pre>
+      <h2 id="nested-structures">🧩 Nested Conditions and Loops</h2>
+      <p>
+        You can place conditions and loops inside each other to create more
+        complex logic.
+      </p>
+      <pre><code class="language-javascript">// Nested conditions example
+let age = 25;
+let hasLicense = true;
+
+if (age >= 18) {
+ if (hasLicense) {
+   console.log("You can drive a car.");
+ } else {
+   console.log("You need a license to drive.");
+ }
+} else {
+ console.log("You're too young to drive.");
+}
+
+// Nested loops example - creating a multiplication table
+for (let i = 1; i <= 3; i++) {
+ for (let j = 1; j <= 3; j++) {
+   console.log(`${i} x ${j} = ${i*j}`);
+ }
+ console.log('---'); // Separator between rows
+}
+/* Output:
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+---
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+---
+3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+--- */</code></pre>
+      <div class="warning">
+        <p>
+          <strong>Performance Note:</strong> Nested loops have O(n²) complexity.
+          Be cautious with large datasets as they can become slow.
+        </p>
+      </div>
+      <h2 id="common-patterns">🔍 Common Patterns and Use Cases</h2>
+      <h3>Finding Elements in an Array</h3>
+      <pre><code class="language-javascript">const numbers = [12, 5, 8, 130, 44];
+let found = false;
+
+for (let i = 0; i < numbers.length; i++) {
+ if (numbers[i] > 100) {
+   console.log("Found number greater than 100:", numbers[i]);
+   found = true;
+   break;
+ }
+}
+
+if (!found) {
+ console.log("No number greater than 100");
+}</code></pre>
+      <h3>Filtering Elements</h3>
+      <pre><code class="language-javascript">const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenNumbers = [];
+
+for (let num of numbers) {
+ if (num % 2 === 0) {
+   evenNumbers.push(num);
+ }
+}
+console.log(evenNumbers); // [2, 4, 6, 8, 10]</code></pre>
+      <h3>Building a String with a Loop</h3>
+      <pre><code class="language-javascript">let stars = "";
+for (let i = 1; i <= 5; i++) {
+ stars += "*";
+ console.log(stars);
+}
+/* Output:
+*
+**
+***
+****
+***** */</code></pre>
+      <h3>Input Validation Loop</h3>
+      <pre><code class="language-javascript">// Example of a do-while to validate user input
+function getValidInput() {
+ let input;
+ do {
+   input = prompt("Enter a number between 1 and 100:");
+   input = Number(input);
+ } while (isNaN(input) || input < 1 || input > 100);
+ 
+ return input;
+}</code></pre>
+      <h2 id="practice-exercises">💪 Practice Exercises</h2>
+      <ol>
+        <li>
+          <strong>FizzBuzz:</strong> Write a program that prints numbers from 1
+          to 100. For multiples of 3, print "Fizz" instead of the number. For
+          multiples of 5, print "Buzz". For multiples of both 3 and 5, print
+          "FizzBuzz".
+        </li>
+        <li>
+          <strong>Sum of Even Numbers:</strong> Calculate the sum of all even
+          numbers from 1 to 100.
+        </li>
+        <li>
+          <strong>Nested Loops Pattern:</strong> Print a pattern of asterisks
+          forming a right-angled triangle.
+        </li>
+        <li>
+          <strong>Find Prime Numbers:</strong> Write a program that finds all
+          prime numbers between 1 and 50.
+        </li>
+        <li>
+          <strong>Temperature Converter:</strong> Create a program that converts
+          temperatures between Celsius and Fahrenheit based on user input.
+        </li>
+      </ol>
+      <div class="highlight">
+        <h3>Exercise Solution Example: FizzBuzz</h3>
+        <pre><code class="language-javascript">for (let i = 1; i <= 100; i++) {
+ if (i % 3 === 0 && i % 5 === 0) {
+   console.log("FizzBuzz");
+ } else if (i % 3 === 0) {
+   console.log("Fizz");
+ } else if (i % 5 === 0) {
+   console.log("Buzz");
+ } else {
+   console.log(i);
+ }
+}</code></pre>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

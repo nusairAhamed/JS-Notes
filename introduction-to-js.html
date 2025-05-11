@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Class 2 Notes - Conditions and Loops in JavaScript</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button aria-label="Toggle dark mode" id="theme-toggle">🌓</button>
+      <button aria-label="Back to top" class="back-to-top" id="back-to-top">
+        ↑
+      </button>
+      <h1>🎓 Introduction to JavaScript</h1>
+      <div class="highlight">
+        🌟 Objective: Learn Variables, Data Types, Operators in JavaScript with
+        Practical Examples!
+      </div>
+      <div class="toc">
+        <h2 id="table-of-contents">📑 Table of Contents</h2>
+        <ul>
+          <li><a href="#what-is-javascript">What is JavaScript?</a></li>
+          <li><a href="#setting-up">Setting up Environment</a></li>
+          <li>
+            <a href="#variables-data-types">Variables and Data Types</a>
+          </li>
+          <li><a href="#declaring-variables">Declaring Variables</a></li>
+          <li><a href="#naming-rules">Naming Rules</a></li>
+          <li><a href="#constants">Constants (const)</a></li>
+          <li><a href="#var-let-const">var vs let vs const</a></li>
+          <li>
+            <a href="#operators">Operators in JavaScript</a>
+            <ul class="toc-sub">
+              <li>
+                <a href="#arithmetic-operators">Arithmetic Operators</a>
+              </li>
+              <li>
+                <a href="#assignment-operators">Assignment Operators</a>
+              </li>
+              <li>
+                <a href="#comparison-operators">Comparison Operators</a>
+              </li>
+              <li><a href="#logical-operators">Logical Operators</a></li>
+            </ul>
+          </li>
+          <li><a href="#type-conversion">Type Conversion</a></li>
+          <li><a href="#common-mistakes">Common Beginner Mistakes</a></li>
+          <li><a href="#practice">Practice Exercises</a></li>
+        </ul>
+      </div>
+      <h2 id="what-is-javascript">🌐 What is JavaScript?</h2>
+      <ul>
+        <li>
+          JavaScript is a versatile programming language that makes websites
+          interactive and dynamic.
+        </li>
+        <li>
+          It runs on browsers (like Chrome, Firefox) and servers (Node.js).
+        </li>
+        <li>
+          JavaScript is used in websites, mobile apps, games, and IoT devices.
+        </li>
+        <li>
+          Created in 1995, it's now one of the world's most popular programming
+          languages.
+        </li>
+        <li>It's not related to Java despite the similar name.</li>
+      </ul>
+      <h2 id="setting-up">🛠️ Setting up Environment</h2>
+      <ol>
+        <li>
+          Install VS Code from
+          <a href="https://code.visualstudio.com/" target="_blank"
+            >code.visualstudio.com</a
+          >.
+        </li>
+        <li>Create a folder for your JavaScript projects.</li>
+        <li>Create a file named <code>first.js</code> in that folder.</li>
+        <li>Open Chrome Browser → Right click → Inspect → Console tab.</li>
+        <li>
+          First Code:
+          <pre><code class="language-javascript">console.log("Hello, World!");</code></pre>
+        </li>
+      </ol>
+
+      <h2 id="variables-data-types">📈 Variables and Data Types</h2>
+      <p>
+        Variables are containers for storing data values. JavaScript has several
+        data types:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+            <th>Real-world Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>String</td>
+            <td>Text inside quotes</td>
+            <td><code>"Hello"</code></td>
+            <td>User names, messages, text content</td>
+          </tr>
+          <tr>
+            <td>Number</td>
+            <td>Numeric values</td>
+            <td><code>123</code> or <code>3.14</code></td>
+            <td>Ages, prices, quantities</td>
+          </tr>
+          <tr>
+            <td>Boolean</td>
+            <td>True or False</td>
+            <td><code>true</code> / <code>false</code></td>
+            <td>User logged in status, form validation</td>
+          </tr>
+          <tr>
+            <td>Null</td>
+            <td>Intentional empty value</td>
+            <td><code>null</code></td>
+            <td>When you want to explicitly clear a value</td>
+          </tr>
+          <tr>
+            <td>Undefined</td>
+            <td>No value assigned yet</td>
+            <td><code>undefined</code></td>
+            <td>Default value for uninitialized variables</td>
+          </tr>
+          <tr>
+            <td>Object</td>
+            <td>Key-value pair collection</td>
+            <td><code>{ name: "John", age: 30 }</code></td>
+            <td>User profiles, product details</td>
+          </tr>
+          <tr>
+            <td>Array</td>
+            <td>Ordered list of items</td>
+            <td><code>["Apple", "Banana", "Cherry"]</code></td>
+            <td>Shopping cart items, to-do lists</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="declaring-variables">✏️ Declaring Variables</h2>
+      <p>JavaScript provides three ways to declare variables:</p>
+      <pre><code class="language-javascript">let age = 25;        // Block-scoped variable that can be reassigned
+  var name = "John";    // Function-scoped variable (older syntax)
+  const birthYear = 2000; // Block-scoped constant (cannot be reassigned)</code></pre>
+      <h2 id="naming-rules">⚡ Naming Rules</h2>
+      <ul>
+        <li>✅ Can include: letters, digits, $, and _</li>
+        <li>✅ Must start with a letter, $, or _</li>
+        <li>✅ JavaScript is case-sensitive (myName ≠ myname)</li>
+        <li>✅ Use camelCase for multi-word names: firstName</li>
+        <li>❌ Cannot start with a number (e.g., 1name)</li>
+        <li>❌ Cannot use reserved keywords (like let, const, function)</li>
+      </ul>
+      <div class="warning">
+        <p><strong>Common Naming Convention Patterns:</strong></p>
+        <ul>
+          <li>
+            <strong>camelCase:</strong> First word lowercase, others capitalized
+            (e.g., firstName) - Used for variables and functions
+          </li>
+          <li>
+            <strong>PascalCase:</strong> All words capitalized (e.g., FirstName)
+            - Used for classes and constructor functions
+          </li>
+          <li>
+            <strong>UPPER_SNAKE_CASE:</strong> All uppercase with underscores
+            (e.g., MAX_SIZE) - Used for constants
+          </li>
+        </ul>
+      </div>
+      <h2 id="constants">🎯 Constants (<code>const</code>)</h2>
+      <pre><code class="language-javascript">const pi = 3.14159;
+  pi = 3.14; // ❌ Error! Cannot reassign a constant</code></pre>
+      <p>
+        <strong>🧠 Note:</strong> You can modify contents inside an object or
+        array declared with const, but not reassign the variable itself.
+      </p>
+      <pre><code class="language-javascript">const car = { brand: "Toyota" };
+  car.brand = "Honda"; // ✅ Allowed - Modifying property
+  car.model = "Civic"; // ✅ Allowed - Adding property
+  car = {};            // ❌ Not allowed - Reassigning variable
+  
+  const colors = ["red", "green"];
+  colors.push("blue");  // ✅ Allowed - Modifying array
+  colors = ["yellow"];  // ❌ Not allowed - Reassigning variable</code></pre>
+
+      <h2 id="var-let-const">🧠 var vs let vs const (Quick Tips)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>var</th>
+            <th>let</th>
+            <th>const</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Scope</td>
+            <td>Function</td>
+            <td>Block</td>
+            <td>Block</td>
+          </tr>
+          <tr>
+            <td>Re-declarable?</td>
+            <td>✅ Yes</td>
+            <td>🚫 No</td>
+            <td>🚫 No</td>
+          </tr>
+          <tr>
+            <td>Re-assignable?</td>
+            <td>✅ Yes</td>
+            <td>✅ Yes</td>
+            <td>🚫 No</td>
+          </tr>
+          <tr>
+            <td>Hoisting</td>
+            <td>✅ (initialized with undefined)</td>
+            <td>✅ (but not initialized)</td>
+            <td>✅ (but not initialized)</td>
+          </tr>
+          <tr>
+            <td>When to use</td>
+            <td>Legacy code</td>
+            <td>Values that change</td>
+            <td>Values that shouldn't change</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="highlight">
+        <p>
+          <strong>Best Practice:</strong> Use <code>const</code> by default,
+          <code>let</code> when you need to reassign, and avoid
+          <code>var</code> in modern JavaScript.
+        </p>
+      </div>
+      <h2 id="operators">➕ Operators in JavaScript</h2>
+      <h3 id="arithmetic-operators">🧮 Arithmetic Operators</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Example</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>+</td>
+            <td>Addition</td>
+            <td><code>5 + 2</code></td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>Subtraction</td>
+            <td><code>5 - 2</code></td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>Multiplication</td>
+            <td><code>5 * 2</code></td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td>Division</td>
+            <td><code>10 / 2</code></td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>%</td>
+            <td>Modulus (remainder)</td>
+            <td><code>5 % 2</code></td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>**</td>
+            <td>Exponentiation</td>
+            <td><code>2 ** 3</code></td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>++</td>
+            <td>Increment</td>
+            <td><code>let x = 5; x++;</code></td>
+            <td>x becomes 6</td>
+          </tr>
+          <tr>
+            <td>--</td>
+            <td>Decrement</td>
+            <td><code>let x = 5; x--;</code></td>
+            <td>x becomes 4</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre><code class="language-javascript">let a = 10;
+  let b = 3;
+  console.log(a + b);  // 13
+  console.log(a - b);  // 7
+  console.log(a * b);  // 30
+  console.log(a / b);  // 3.333...
+  console.log(a % b);  // 1
+  console.log(a ** 2); // 100 (10 squared)
+  
+  let c = 5;
+  console.log(c++);    // 5 (returns c first, then increments)
+  console.log(c);      // 6
+  let d = 5;
+  console.log(++d);    // 6 (increments d first, then returns)</code></pre>
+      <div class="highlight">
+        <p>
+          <strong>Special Case:</strong> The <code>+</code> operator can also
+          concatenate strings:
+        </p>
+        <pre><code class="language-javascript">let firstName = "John";
+  let lastName = "Doe";
+  console.log(firstName + " " + lastName); // "John Doe"</code></pre>
+      </div>
+
+      <h3 id="assignment-operators">📝 Assignment Operators</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Example</th>
+            <th>Equivalent to</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>=</td>
+            <td>Assign value</td>
+            <td><code>x = 10</code></td>
+            <td><code>x = 10</code></td>
+          </tr>
+          <tr>
+            <td>+=</td>
+            <td>Add and assign</td>
+            <td><code>x += 5</code></td>
+            <td><code>x = x + 5</code></td>
+          </tr>
+          <tr>
+            <td>-=</td>
+            <td>Subtract and assign</td>
+            <td><code>x -= 2</code></td>
+            <td><code>x = x - 2</code></td>
+          </tr>
+          <tr>
+            <td>*=</td>
+            <td>Multiply and assign</td>
+            <td><code>x *= 3</code></td>
+            <td><code>x = x * 3</code></td>
+          </tr>
+          <tr>
+            <td>/=</td>
+            <td>Divide and assign</td>
+            <td><code>x /= 2</code></td>
+            <td><code>x = x / 2</code></td>
+          </tr>
+          <tr>
+            <td>%=</td>
+            <td>Modulus and assign</td>
+            <td><code>x %= 3</code></td>
+            <td><code>x = x % 3</code></td>
+          </tr>
+          <tr>
+            <td>**=</td>
+            <td>Exponent and assign</td>
+            <td><code>x **= 2</code></td>
+            <td><code>x = x ** 2</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <pre><code class="language-javascript">let x = 5;
+  x += 3; // x = 8
+  x -= 2; // x = 6
+  x *= 4; // x = 24
+  x /= 6; // x = 4
+  console.log(x); // 4
+  
+  // String assignment
+  let greeting = "Hello";
+  greeting += " World"; // greeting = "Hello World"
+  console.log(greeting);</code></pre>
+      <h3 id="comparison-operators">⚖️ Comparison Operators</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Example</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>==</td>
+            <td>Equal to (value only)</td>
+            <td><code>5 == '5'</code></td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>===</td>
+            <td>Strict equal (value and type)</td>
+            <td><code>5 === '5'</code></td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td>!=</td>
+            <td>Not equal (value only)</td>
+            <td><code>5 != 3</code></td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>!==</td>
+            <td>Strict not equal (value and type)</td>
+            <td><code>5 !== '5'</code></td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>Greater than</td>
+            <td><code>5 &gt; 2</code></td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>Less than</td>
+            <td><code>2 &lt; 5</code></td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>&gt;=</td>
+            <td>Greater than or equal to</td>
+            <td><code>5 &gt;= 5</code></td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>&lt;=</td>
+            <td>Less than or equal to</td>
+            <td><code>3 &lt;= 5</code></td>
+            <td>true</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre><code class="language-javascript">let num = 5;
+  console.log(num == '5');   // true - values are equal
+  console.log(num === '5');  // false - types are different
+  console.log(num != 3);     // true - values are not equal
+  console.log(num !== '5');  // true - types are different
+  console.log(num &gt; 3);      // true
+  console.log(num &lt; 10);     // true
+  console.log(num &gt;= 5);     // true
+  console.log(num &lt;= 5);     // true</code></pre>
+      <div class="warning">
+        <p>
+          <strong>Best Practice:</strong> Always use strict equality
+          (<code>===</code>) and strict inequality (<code>!==</code>) to avoid
+          unexpected type conversions.
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
